@@ -13,6 +13,6 @@ function draw() {
   // with its center at x position 200
   // and at y position 200
   
-  line (100,100,100,100)
-
+  line (25,25,25,25)
+  stroke("black")
 }
