@@ -13,15 +13,15 @@ function draw() {
   // with its center at x position 200
   // and at y position 200
   
-  // Draw eyes
-  fill("black");
-  circle(width / 2 - 50, height / 2, 30);
-  circle(width / 2 + 50, height / 2, 30);
-  
-  // Draw mouth
-  noFill();
-  stroke(0);
-  strokeWeight(10);
-  arc(width / 2, height / 2 + 50, 80, 40, 0, PI);
+// Draw eyes
+nofill()
+stroke("black")
+strokeWeight(6)
+line(150, 180, 180, 180); // Left eye
+line(220, 180, 250, 180); // Right eye
 
+// Draw mouth
+line(150, 250, 250, 250);
+
+  
 }
