@@ -16,7 +16,7 @@ function draw() {
   
   noFill();        // disable previous fill 
   stroke("black"); // set the stroke (line) color 
-  strokeWeight(6); // set the stroke thickness stroke("gold"); // set the stroke (line) color 
+  strokeWeight(6); // set the stroke thickness 
 
 // Draw eyes
 line(150, 180, 180, 180); // Left eye
