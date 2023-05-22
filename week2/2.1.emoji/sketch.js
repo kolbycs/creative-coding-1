@@ -4,14 +4,17 @@ function setup() {
 
 function draw() {
   background(220);
-  ellipse(200,200,250,250);
   fill("yellow"); // set the fill color
+    stroke("gold"); // set the stroke (line) color 
+  strokeWeight(6); // set the stroke thickness
+  ellipse(200,200,250,250);
+  
   
 // draw an ellipse with 250 pixel diameter
   // with its center at x position 200
   // and at y position 200
   
-  nofill();        // disable previous fill 
+  noFill();        // disable previous fill 
   stroke("black"); // set the stroke (line) color 
   strokeWeight(6); // set the stroke thickness stroke("gold"); // set the stroke (line) color 
 
@@ -21,6 +24,7 @@ line(220, 180, 250, 180); // Right eye
 
 // Draw mouth
 line(150, 250, 250, 250);
+
 
   
 }
