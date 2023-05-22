@@ -14,9 +14,6 @@ function draw() {
   // and at y position 200
   
 // Draw eyes
-nofill()
-stroke("black")
-strokeWeight(6)
 line(150, 180, 180, 180); // Left eye
 line(220, 180, 250, 180); // Right eye
 
