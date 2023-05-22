@@ -14,7 +14,7 @@ function draw() {
   // and at y position 200
   
   // Draw eyes
-  fill(0);
+  fill("black");
   circle(width / 2 - 50, height / 2, 30);
   circle(width / 2 + 50, height / 2, 30);
   
