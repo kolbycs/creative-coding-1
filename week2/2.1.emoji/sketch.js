@@ -11,7 +11,7 @@ function draw() {
   // with its center at x position 200
   // and at y position 200
   
-  nofill()        // disable previous fill 
+  nofill();        // disable previous fill 
   stroke("black"); // set the stroke (line) color 
   strokeWeight(6); // set the stroke thickness stroke("gold"); // set the stroke (line) color 
 
