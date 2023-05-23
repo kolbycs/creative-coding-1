@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(1200, 1200);
+  createCanvas(900, 900); //change height and width 
 noLoop()    // stop circles from moving
 }
 
