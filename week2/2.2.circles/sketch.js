@@ -1,6 +1,5 @@
 function setup() {
   createCanvas(1200, 1200);
-noloop()
 }
 
 function draw() {
@@ -12,6 +11,9 @@ for (let x = 0; x < 8; x++){
       push();
       translate(x * 100, y * 100);
       ellipse(0,0,100,100);
+      stroke('red');
+      strokeweight('40');
+      fill ('blue')
       pop();
    }
 
