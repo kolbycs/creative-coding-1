@@ -6,8 +6,8 @@ function draw() {
   background(220);
 
 translate(100,100);
-for (let x = 0; x < 8; x++){
-   for (let y = 0; y < 8; y++){
+for (let x = 0; x < 11; x++){
+   for (let y = 0; y < 11; y++){
       push();
       translate(x * 100, y * 100);
         fill ('black')
