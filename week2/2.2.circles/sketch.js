@@ -12,7 +12,7 @@ for (let x = 0; x < 8; x++){
       push();
       translate(x * 145,y * 145); //change spacing of circles
       fill (random(0,144),100,144);       //change inside color
-      stroke('white');        //change outline color
+      stroke(random (144,255),200,255);        //change outline color randomly
       strokeWeight(random(5,25));     //change outline thickness
      ellipse(0,0,100,100);
       pop();
