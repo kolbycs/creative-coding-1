@@ -4,7 +4,7 @@ function setup() {
 }
 
 // I chose to do 'square in a square'' as it seemed more doable then most of the other designs.
-//It took many hours of trail and error in the p5js web editor trying to figure out if/else conditional statements to get it anywhere close to the refrenece. I had too many tabs open to count.
+//It took many hours of trail and error in the p5js web editor trying to figure out if/else conditional statements and other formating options to get it anywhere close to the refrenece. I had too many tabs open to count.
 https://www.internationalquiltmuseum.org/quilt/19970070181
 
 
@@ -23,8 +23,8 @@ function draw() {
         stroke(255); // white outline
         fill(0, 0, 128); // dark blue interior
       }
-      strokeWeight(30);
-      rect(50, 50, 100, 100);
+      strokeWeight(30); //line thickness
+      rect(50, 50, 100, 100); //rectangle size
 
       pop();
     }
