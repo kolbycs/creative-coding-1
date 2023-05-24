@@ -15,7 +15,7 @@ function draw() {
     for (let y = 0; y < 15; y++) {
       push();
       translate(x * 130, y * 130);
-           if ((x + y) % 2 == 0) {   //uses the sums of x and y and divides it by 2 to determine if odd or even. Uses the answer to assign a color scheme, creating a checkerboard pattern.
+           if ((x + y) % 2 == 0) {   //uses the sums of x and y and divides it by 2 to determine if it is divisible. Uses the answer to assign a color scheme, creating a checkerboard pattern. Even numbers are divisible, odd arent. 
                                      //uses the Modulus (Division Remainder) for the check
         stroke(0, 0, 128); // dark blue outline
         fill(255); // white interior
