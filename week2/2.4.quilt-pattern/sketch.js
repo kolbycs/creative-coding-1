@@ -1,17 +1,18 @@
 function setup() {
-  createCanvas(2000, 2000);
+  createCanvas(2030, 2675);
   noLoop();
 }
 
 // I chose to do 'square in a square'' as it seemed more doable then most of the other designs.
+//It took many hours of trail and error in the p5js web editor trying to figure out if/else conditional statements to get it anywhere close to the refrenece. I had too many tabs open to count.
 https://www.internationalquiltmuseum.org/quilt/19970070181
 
 
 function draw() {
   background(0,0,140);
 
-  for (let x = 0; x < 15; x++) {
-    for (let y = 0; y < 15; y++) {
+  for (let x = 0; x < 15; x++) {      //makes a 15,15 grid
+    for (let y = 0; y < 20; y++) {
       push();
       translate(x * 130, y * 130);
            if ((x + y) % 2 == 0) {   //uses the sums of x and y and divides it by 2 to determine if odd or even. Uses the answer to assign a color scheme, creating a checkerboard pattern.
