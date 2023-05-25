@@ -1,3 +1,5 @@
+// https://www.artsy.net/artwork/vera-molnar-18-bleus I chose this artwork as the colors are some of my favorites. I had to use some commands and ideas I've never used before and it has been a great experience for me as a new programmer. 
+
 let colors = [     //create a list of colors in a global variable
   ["#4061E5"],
   ["#3a4ecd"],
