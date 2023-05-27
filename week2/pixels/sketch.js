@@ -15,7 +15,7 @@ function draw() {
 
 for (let x = 0; x <= img.width; x += sampleX ) {
 
-for (let y = 0; y <= img.height; y += sampleY )
+for (let y = 0; y <= img.height; y += sampleY ){
 
 var index = (x + y * img.width) * 4;
 
@@ -25,6 +25,8 @@ var b = img.pixels[index + 2];
 
 fill(r,g,b);
 ellipse(x,y,sampleX,sampleY);
+
+}
 
 }
 
