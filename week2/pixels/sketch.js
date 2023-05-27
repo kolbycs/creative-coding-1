@@ -12,7 +12,7 @@ function setup() {
 
 function draw() {
   background(220);
-  nostroke();
+  noStroke();
   
 for (let x = 0; x <= img.width; x += sampleX ) {
 
