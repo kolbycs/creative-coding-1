@@ -25,7 +25,7 @@ var g = img.pixels[index + 1];
 var b = img.pixels[index + 2];
 
 fill(r,g,b);
-triangle(x,y,sampleX,sampleY);
+rect(x,y,sampleX,sampleY);
 
 }
 
