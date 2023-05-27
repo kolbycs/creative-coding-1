@@ -12,7 +12,8 @@ function setup() {
 
 function draw() {
   background(220);
-
+  nostroke();
+  
 for (let x = 0; x <= img.width; x += sampleX ) {
 
 for (let y = 0; y <= img.height; y += sampleY ){
@@ -24,7 +25,7 @@ var g = img.pixels[index + 1];
 var b = img.pixels[index + 2];
 
 fill(r,g,b);
-rect(x,y,sampleX,sampleY);
+triangle(x,y,sampleX,sampleY);
 
 }
 
