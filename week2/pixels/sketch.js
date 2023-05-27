@@ -1,6 +1,6 @@
 let img;
-let sampleX = 50;
-let sampleY = 50;
+let sampleX = 12;
+let sampleY = 12;
 function preload(){
    img = loadImage('https://kolbycs.github.io/creative-coding-true/week2/pixels/chief.jpg');
 }
@@ -24,7 +24,7 @@ var g = img.pixels[index + 1];
 var b = img.pixels[index + 2];
 
 fill(r,g,b);
-ellipse(x,y,sampleX,sampleY);
+rect(x,y,sampleX,sampleY);
 
 }
 
