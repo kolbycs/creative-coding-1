@@ -2,6 +2,9 @@ let x = 0;
 let y = 0;
 let xspeed = 1;
 let yspeed = 1;
+function preload(){
+  img = loadImage('https://kolbycs.github.io/creative-coding-true/week3/3.1.bounce/cowa.jpg');
+}
 
 function setup() {
   createCanvas(400, 400);
@@ -20,6 +23,6 @@ function draw() {
   x = x + xspeed; // iterate x
   y = y + yspeed; // iterate y
   
-  circle(x, y, 50);
+  Image(img,x,y,50);
   }
 
