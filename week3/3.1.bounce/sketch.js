@@ -5,6 +5,12 @@ let yspeed = 1;
 function preload(){
   img = loadImage('https://kolbycs.github.io/creative-coding-true/week3/3.1.bounce/cowa.jpg');
 }
+let texts = [     //create a list of text in a global variable
+  ['COWabunga'],
+  ['rAdIcAl'],
+  ['mOOOOOOO'],
+  ['over the MOOOOn'],
+];
 
 function setup() {
   createCanvas(400, 400);
@@ -16,9 +22,13 @@ function draw() {
   // check for collision with left and right edge, top and bottom edge
   if (x < 0 | x > width){
     xspeed = xspeed * -1; // reverse the x direction
+    let textslist = random(texts);
+    displayText(textslist);
   }
   if (y < 0 | y > height){
     yspeed = yspeed * -1; // reverse the y direction
+    let textslist = random(texts);
+    displayText(textslist);
   }
   x = x + xspeed + random(-1,1); // iterate x
   y = y + yspeed + random(-1,1); // iterate y
