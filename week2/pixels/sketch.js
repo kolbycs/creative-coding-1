@@ -14,7 +14,7 @@ function draw() {
   background(220);
   noStroke(); //hide outline
   
-for (let x = 0; x <= img.width; x += sampleX ) {
+for (let x = 0; x <= img.width; x += sampleX ) { //code from video to set up pixel data
 
 for (let y = 0; y <= img.height; y += sampleY ){
 
