@@ -1,6 +1,6 @@
 let img;
-let sampleX = 12;
-let sampleY = 12;
+let sampleX = 30;
+let sampleY = 30;
 function preload(){
    img = loadImage('https://kolbycs.github.io/creative-coding-true/week2/pixels/chief.jpg');
 }
