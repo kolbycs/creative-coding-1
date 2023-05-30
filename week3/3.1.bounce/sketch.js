@@ -20,8 +20,8 @@ function draw() {
   if (y < 0 | y > height){
     yspeed = yspeed * -1; // reverse the y direction
   }
-  x = x + xspeed; // iterate x
-  y = y + yspeed; // iterate y
+  x = x + xspeed + random(-1,1); // iterate x
+  y = y + yspeed + random(-1,1); // iterate y
   
   image(img,x,y,50,50);
   }
