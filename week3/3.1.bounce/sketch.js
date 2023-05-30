@@ -14,6 +14,9 @@ function draw() {
   if (x < 0 | x > width){
     xspeed = xspeed * -1; // reverse the x direction
 }
+  if (y < 0 | y > height){
+    yspeed = yspeed * -1; // reverse the x direction
+  }
   x = x + xspeed; // iterate x
   y = y + yspeed; // iterate y
   
