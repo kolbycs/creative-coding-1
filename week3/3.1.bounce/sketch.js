@@ -22,7 +22,7 @@ function draw() {
   // check for collision with left and right edge, top and bottom edge
   if (x < 0 | x > width){
     xspeed = xspeed * -1; // reverse the x direction
-    let textslist = random(texts);
+    let textslist = random(texts);  //call back to array, randomize
     displayText(textslist);
   }
   if (y < 0 | y > height){
@@ -40,7 +40,7 @@ function draw() {
     textAlign(CENTER); // align text to center
     textSize(30); // text size
   
-    text(message, width / 2, height / 2); // display the text in the center of the canvas
+    text(message, width / 2, height / 2); // display text in center of canvas
   }
   }
 
