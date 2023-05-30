@@ -23,6 +23,6 @@ function draw() {
   x = x + xspeed; // iterate x
   y = y + yspeed; // iterate y
   
-  Image(img,x,y,50);
+  image(img,x,y,50,50);
   }
 
