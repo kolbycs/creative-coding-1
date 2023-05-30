@@ -36,9 +36,9 @@ function draw() {
   image(img,x,y,50,50);
   
   function displayText(message) {
-    fill(0); // set text color to black
-    textAlign(CENTER); // center-align the text
-    textSize(18); // set the text size
+    fill(255, 0, 255); // text color to magenta
+    textAlign(CENTER); // align text to center
+    textSize(30); // text size
   
     text(message, width / 2, height / 2); // display the text in the center of the canvas
   }
