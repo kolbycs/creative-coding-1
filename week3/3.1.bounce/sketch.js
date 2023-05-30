@@ -16,11 +16,9 @@ function draw() {
   // check for collision with left and right edge, top and bottom edge
   if (x < 0 | x > width){
     xspeed = xspeed * -1; // reverse the x direction
-    rotate(45);  //rotate if hits edge
   }
   if (y < 0 | y > height){
     yspeed = yspeed * -1; // reverse the y direction
-    rotate(45);  //rotate if hits edge
   }
   x = x + xspeed + random(-1,1); // iterate x
   y = y + yspeed + random(-1,1); // iterate y
