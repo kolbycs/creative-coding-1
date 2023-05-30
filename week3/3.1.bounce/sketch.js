@@ -34,5 +34,13 @@ function draw() {
   y = y + yspeed + random(-1,1); // iterate y
   
   image(img,x,y,50,50);
+  
+  function displayText(message) {
+    fill(0); // set text color to black
+    textAlign(CENTER); // center-align the text
+    textSize(18); // set the text size
+  
+    text(message, width / 2, height / 2); // display the text in the center of the canvas
+  }
   }
 
