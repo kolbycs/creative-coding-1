@@ -25,7 +25,10 @@ function draw() {
     yspeed = -speedfactor;
   }
 
-  image(img,x-30,y-30,60,60);   //create sprite
+  x += xspeed; //update values of x,y  
+  y += yspeed; 
+
+  image(img,x-50,y-50,100,100);   //create sprite
 
 
 
