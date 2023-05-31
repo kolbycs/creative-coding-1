@@ -20,12 +20,12 @@ function draw() {
   background('green');
 
   // check for collision with left and right edge, top and bottom edge
-  if (x < 0 | x > width){
+  if (x < 0 || x > width){
     xspeed = xspeed * -1; // reverse the x direction
     let textslist = random(texts);  //call back to array, randomize
     displayText(textslist);
   }
-  if (y < 0 | y > height){
+  if (y < 0 || y > height){
     yspeed = yspeed * -1; // reverse the y direction
     let textslist = random(texts);
     displayText(textslist);
