@@ -30,10 +30,10 @@ function draw() {
     let textslist = random(texts);
     displayText(textslist);
   }
-  x = x + xspeed + random(-1,1); // iterate x
-  y = y + yspeed + random(-1,1); // iterate y
+  x = x + xspeed; // iterate x
+  y = y + yspeed; // iterate y
   
-  image(img,x-50,y-50,100,100);
+  image(img,x,y,60,60);
   
   function displayText(message) {
     fill(255, 0, 255); // text color to magenta
