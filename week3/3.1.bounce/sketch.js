@@ -35,6 +35,8 @@ function draw() {
   
   image(img,x,y,80,80);
   
+}
+
   function displayText(message) {
     fill(255, 0, 255); // text color to magenta
     textAlign(CENTER); // align text to center
@@ -42,5 +44,5 @@ function draw() {
   
     text(message, width / 2, height / 2); // display text in center of canvas
   }
-  }
+  
 
