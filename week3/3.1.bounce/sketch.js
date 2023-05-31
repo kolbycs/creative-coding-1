@@ -33,7 +33,7 @@ function draw() {
   x = x + xspeed; // iterate x
   y = y + yspeed; // iterate y
   
-  translate(200,200);
+  translate(width/2,height/2);
   image(img,x,y,60,60);
   
   function displayText(message) {
