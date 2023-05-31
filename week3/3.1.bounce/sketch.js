@@ -21,17 +21,17 @@ function draw() {
 
   // check for collision with left and right edge, top and bottom edge
   if (x < 0 | x > width){
-    xspeed *= -1; // reverse the x direction
+    xspeed = xspeed * -1; // reverse the x direction
     let textslist = random(texts);  //call back to array, randomize
     displayText(textslist);
   }
   if (y < 0 | y > height){
-    yspeed *= -1; // reverse the y direction
+    yspeed = yspeed * -1; // reverse the y direction
     let textslist = random(texts);
     displayText(textslist);
   }
-  x += xspeed; // iterate x
-  y += yspeed; // iterate y
+  x = x + xspeed; // iterate x
+  y = y + yspeed; // iterate y
   
   image(img,x,y,80,80);
   
