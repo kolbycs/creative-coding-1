@@ -33,8 +33,7 @@ function draw() {
   x = x + xspeed; // iterate x
   y = y + yspeed; // iterate y
   
-  translate(width/2,height/2);
-  image(img,x,y,60,60);
+  image(img,x-30,y-30,60,60);
   
   function displayText(message) {
     fill(255, 0, 255); // text color to magenta
