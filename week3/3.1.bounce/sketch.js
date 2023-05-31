@@ -33,7 +33,7 @@ function draw() {
   x = x + xspeed + random(-1,1); // iterate x
   y = y + yspeed + random(-1,1); // iterate y
   
-  image(img,x,y,50,50);
+  image(img,x-50,y-50,100,100);
   
   function displayText(message) {
     fill(255, 0, 255); // text color to magenta
