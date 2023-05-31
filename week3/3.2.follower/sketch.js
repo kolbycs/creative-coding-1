@@ -3,15 +3,19 @@ let xspeed = speedfactor;
 let yspeed = speedfactor;
 let x = 0; 
 let y = 0;
+let img;
+let bimg;
 function preload(){
   img = loadImage('https://kolbycs.github.io/creative-coding-true/week3/3.2.follower/donkey.jpg');  //preload image
-  }
+  bimg = loadImage('https://kolbycs.github.io/creative-coding-true/week3/3.2.follower/shrek.jpg')  //preload background
+}
 function setup() {
   createCanvas(400, 400);
+  background(bimg);  //set background
 }
 
 function draw() {
-  background(220);
+  background(bimg);  //set background
 
   if (mouseX > x){             //check for directions
     xspeed = speedfactor;
