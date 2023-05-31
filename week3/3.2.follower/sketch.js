@@ -28,7 +28,7 @@ function draw() {
   x += xspeed; //update values of x,y  
   y += yspeed; 
 
-  if (dist(mouseX,mouseY)<5){   //if sprite gets too close to cursor, reset position
+  if (dist(x,y,mouseX,mouseY)<5){   //if sprite gets too close to cursor, reset position
     x=0;
     y=0;
   }
