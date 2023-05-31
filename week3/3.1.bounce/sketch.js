@@ -17,15 +17,15 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background('green');
 
   // check for collision with left and right edge, top and bottom edge
-  if (x < 0 | x > width){
+  if (x < 0 | x > width-img.width){
     xspeed = xspeed * -1; // reverse the x direction
     let textslist = random(texts);  //call back to array, randomize
     displayText(textslist);
   }
-  if (y < 0 | y > height){
+  if (y < 0 | y > height-img.height){
     yspeed = yspeed * -1; // reverse the y direction
     let textslist = random(texts);
     displayText(textslist);
@@ -33,7 +33,7 @@ function draw() {
   x = x + xspeed; // iterate x
   y = y + yspeed; // iterate y
   
-  image(img,x-40,y-40,80,80);
+  image(img,x,y,80,80);
   
   function displayText(message) {
     fill(255, 0, 255); // text color to magenta
