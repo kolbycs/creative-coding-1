@@ -11,7 +11,7 @@ class Rippler {
   }
 
   draw() {
-    this.d += 1;
+    this.d += 2;
     circle(this.x, this.y, this.d);
   }
 }
