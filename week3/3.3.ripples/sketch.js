@@ -1,7 +1,7 @@
 let ripple_x = 0;
 let ripple_y = 0;
 let ripple_d = 0;
-let ripple_all = [];
+let ripplers = [];
 class Rippler {
   constructor (x,y){
    this.x = x,
@@ -20,13 +20,13 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(127,255,212);
   stroke("white");
   strokeWeight(5);
   noFill();
 
-  for (Let i = 0; i < ripple_all.length; i++){
-    ripple_all[i].draw();
+  for (Let i = 0; i < ripplers.length; i++){
+    ripplers[i].draw();
   }
   
   //ripple_d += 1;
@@ -46,6 +46,6 @@ function mousePressed(){
 ripple_x = mouseX;
 ripple_y = mouseY;
 ripple_d = 0;
-ripple_all.push(new Rippler(mouseX, mouseY));
+ripplers.push( new Rippler(mouseX, mouseY));
 
 }
