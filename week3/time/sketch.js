@@ -27,4 +27,28 @@ function draw() {
 
 mm = millis() - milliFreeze;
 
+push();
+line(50, 150, 50, 350);
+line(550, 150, 550, 350);
+pop();
+
+push();
+
+noStroke();
+fill("blue");
+
+x_hour = map(hour(), 0, 23, 50, 550);
+circle(x_hour, 180, 40);
+
+x_minute = map(minute(), 0, 59, 50, 550);
+circle(x_minute, 240, 40);
+
+x_second = map(second(), 0, 59, 50, 550);
+circle(x_second, 300, 40);
+
+x_mil = map(mm, 0, 999, 50, 550);
+circle(x_mil, 350, 20);
+
+pop();
+
 }
