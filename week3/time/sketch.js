@@ -7,6 +7,13 @@ let currentSecond;
 let milliFreeze = 0;
 let mm;
 
+function preload(){
+  sun = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/sun.jpg');  //preload image
+  mercury = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/mercury.jpg')  //preload background
+  venus = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/venus.jpg');  //preload image
+  earth = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/earth.jpg')  //preload background
+}
+
 function setup() {
   createCanvas(600, 400);
 }
