@@ -43,7 +43,7 @@ pop();
 push();
 
 x_hour = map(hour(), 0, 23, 50, 550);
-image(sun, x_hour, 30, 200);
+image(sun, x_hour, 10, 200);
 
 x_minute = map(minute(), 0, 59, 50, 550);
 image(mercury, x_minute, 200, 200);
@@ -52,7 +52,7 @@ x_second = map(second(), 0, 59, 50, 550);
 image(venus, x_second, 300, 200);
 
 x_mil = map(mm, 0, 999, 50, 550);
-image(earth, x_mil, 400, 200);
+image(earth, x_mil, 450, 200);
 
 pop();
 
