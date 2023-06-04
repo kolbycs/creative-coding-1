@@ -17,7 +17,7 @@ function preload(){
 function setup() {
   createCanvas(1200, 1000); //600, 400
 
-sun.resize(400,350);
+sun.resize(500,450);
 mercury.resize(50,75);
 venus.resize(150,150);
 earth.resize(150,150);
