@@ -37,17 +37,29 @@ pop();
 
 push();
 
-y_day = map(day(), 0, 23, 50, 550);
-image(sun, y_day, 10, 200);
+//y_day = map(day(), 0, 23, 50, 550);
+//image(sun, y_day, 10, 200);
 
-y_hour = map(hour(), 0, 59, 50, 550);
-image(mercury, y_hour, 530, 200);
+//y_hour = map(hour(), 0, 59, 50, 550);
+//image(mercury, y_hour, 530, 200);
 
-y_minute = map(minute(), 0, 59, 50, 550);
-image(venus, y_minute, 650, 200);
+//y_minute = map(minute(), 0, 59, 50, 550);
+//image(venus, y_minute, 650, 200);
 
-y_second = map(second(), 0, 59, 50, 550);
-image(earth, y_second, 850, 200);
+//y_second = map(second(), 0, 59, 50, 550);
+//image(earth, y_second, 850, 200);
+
+y_day = map(day(), 0, 23, 150, 350);
+image(sun, 10, y_day, 200);
+
+y_hour = map(hour(), 0, 59, 150, 350);
+image(mercury, 530, y_hour, 200);
+
+y_minute = map(minute(), 0, 59, 150, 350);
+image(venus, 650, y_minute, 200);
+
+y_second = map(second(), 0, 31, 150, 350);
+image(earth, 850, y_second, 200);
 
 pop();
 
