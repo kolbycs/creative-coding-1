@@ -7,11 +7,6 @@ let currentSecond;
 let milliFreeze = 0;
 let mm;
 
-let sun;
-let mercury;
-let venus;
-let earth;
-
 function preload(){
   sun = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/sun.jpg');  //preload image
   mercury = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/mercury.jpg')  //preload background
@@ -56,30 +51,14 @@ push();
 x_hour = map(hour(), 0, 23, 50, 550);
 image(sun, x_hour, 10, 200);
 
-for (let i = 0; i < minute(); i++) {
-  let x = map(i, 0, 59, 50, 550);
-  image(mercury, x, 530, 50, 50);
-}
+x_minute = map(minute(), 0, 59, 50, 550);
+image(mercury, x_minute, 530, 200);
 
-for (let i = 0; i < second(); i++) {
-  let x = map(i, 0, 59, 50, 550);
-  image(venus, x, 650, 50, 50);
-}
+x_second = map(second(), 0, 59, 50, 550);
+image(venus, x_second, 650, 200);
 
-for (let i = 0; i < mm; i++) {
-  let x = map(i, 0, 999, 50, 550);
-  image(earth, x, 850, 50, 50);
-}
- 
-pop();
-//x_minute = map(minute(), 0, 59, 50, 550);
-//image(mercury, x_minute, 530, 200);
-
-//x_second = map(second(), 0, 59, 50, 550);
-//image(venus, x_second, 650, 200);
-
-//x_mil = map(mm, 0, 999, 50, 550);
-//image(earth, x_mil, 850, 200);
+x_mil = map(mm, 0, 999, 50, 550);
+image(earth, x_mil, 850, 200);
 
 pop();
 
