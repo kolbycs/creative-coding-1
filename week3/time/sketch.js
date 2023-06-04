@@ -11,10 +11,10 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(1200, 1000); //600, 400
+  createCanvas(1200, 1000); 
 
 sun.resize(500,500);
-mercury.resize(80,100);
+mercury.resize(100,100);
 venus.resize(150,150);
 earth.resize(150,150);
 
@@ -30,11 +30,6 @@ function draw() {
   text("minute: "+ minute(), 50, 100);
   text("second: "+ second(), 50, 125);
  
-push();
-line(50, 150, 50, 350);
-line(550, 150, 550, 350);
-pop();
-
 push();
 
 y_day = map(day(), 0, 23, 150, 350);
