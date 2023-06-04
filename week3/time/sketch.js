@@ -18,7 +18,7 @@ function setup() {
   createCanvas(1200, 1000); //600, 400
 
 sun.resize(500,500);
-mercury.resize(30,60);
+mercury.resize(80,80);
 venus.resize(150,150);
 earth.resize(150,150);
 
