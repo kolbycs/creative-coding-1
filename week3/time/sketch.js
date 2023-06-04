@@ -25,10 +25,10 @@ function draw() {
 
   textSize(20);
   fill(255);
-  text("day: "+ day(), 50, 125);
-  text("hour: "+ hour(), 50, 50);
-  text("minute: "+ minute(), 50, 75);
-  text("second: "+ second(), 50, 100);
+  text("day: "+ day(), 50, 50);
+  text("hour: "+ hour(), 50, 75);
+  text("minute: "+ minute(), 50, 100);
+  text("second: "+ second(), 50, 125);
  
 push();
 line(50, 150, 50, 350);
