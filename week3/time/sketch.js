@@ -18,7 +18,7 @@ function setup() {
   createCanvas(1200, 1000); //600, 400
 
 sun.resize(500,500);
-mercury.resize(50,75);
+mercury.resize(25,25);
 venus.resize(150,150);
 earth.resize(150,150);
 
@@ -55,7 +55,7 @@ x_minute = map(minute(), 0, 59, 50, 550);
 image(mercury, x_minute, 530, 200);
 
 x_second = map(second(), 0, 59, 50, 550);
-image(venus, x_second, 600, 200);
+image(venus, x_second, 675, 200);
 
 x_mil = map(mm, 0, 999, 50, 550);
 image(earth, x_mil, 800, 200);
