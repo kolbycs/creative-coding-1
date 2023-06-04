@@ -15,11 +15,11 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(800, 600); //600, 400
 }
 
 function draw() {
-  background(220);
+  background(0);
 
   textSize(20);
   text("hour: "+ hour(), 50, 50);
