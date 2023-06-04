@@ -4,10 +4,10 @@ let x_second = 50;
 let x_day = 50;
 
 function preload(){
-  sun = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/sun.jpg');  //preload image
-  mercury = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/mercury.jpg')  //preload background
-  venus = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/venus.jpg');  //preload image
-  earth = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/earth.jpg')  //preload background
+  sun = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/sun.jpg');  //preload sun
+  mercury = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/mercury.jpg')  //preload mercury
+  venus = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/venus.jpg');  //preload venus
+  earth = loadImage('https://kolbycs.github.io/creative-coding-true/week3/time/earth.jpg')  //preload earth
 }
 
 function setup() {
@@ -53,7 +53,7 @@ y_day = map(day(), 0, 23, 150, 350);
 image(sun, 10, y_day, 200);
 
 y_hour = map(hour(), 0, 59, 150, 350);
-image(mercury, 530, y_hour, 200);
+image(mercury, 330, y_hour, 200);
 
 y_minute = map(minute(), 0, 59, 150, 350);
 image(venus, 650, y_minute, 200);
