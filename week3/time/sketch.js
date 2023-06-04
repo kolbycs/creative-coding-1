@@ -22,6 +22,7 @@ function draw() {
   background(0);
 
   textSize(20);
+  fill(255);
   text("hour: "+ hour(), 50, 50);
   text("minute: "+ minute(), 50, 75);
   text("second: "+ second(), 50, 100);
