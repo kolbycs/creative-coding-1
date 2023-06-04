@@ -25,11 +25,11 @@ function draw() {
 
   textSize(20);
   fill(255);
+  text("day: "+ day(), 50, 125);
   text("hour: "+ hour(), 50, 50);
   text("minute: "+ minute(), 50, 75);
   text("second: "+ second(), 50, 100);
-  text("day: "+ day(), 50, 125);
-
+ 
 push();
 line(50, 150, 50, 350);
 line(550, 150, 550, 350);
@@ -37,17 +37,17 @@ pop();
 
 push();
 
-x_hour = map(hour(), 0, 23, 50, 550);
-image(sun, x_hour, 10, 200);
+x_day = map(day(), 0, 23, 50, 550);
+image(sun, x_day, 10, 200);
+
+x_hour = map(hour(), 0, 59, 50, 550);
+image(mercury, x_hour, 530, 200);
 
 x_minute = map(minute(), 0, 59, 50, 550);
-image(mercury, x_minute, 530, 200);
+image(venus, x_minute, 650, 200);
 
-x_second = map(second(), 0, 59, 50, 550);
-image(venus, x_second, 650, 200);
-
-x_day = map(day(), 0, 31, 50, 550);
-image(earth, x_day, 850, 200);
+x_second = map(second(), 0, 31, 50, 550);
+image(earth, x_second, 850, 200);
 
 pop();
 
