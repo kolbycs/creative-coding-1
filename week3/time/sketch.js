@@ -39,7 +39,7 @@ y_hour = map(hour(), 0, 59, 150, 350);
 image(mercury, 330, y_hour, 200);
 
 y_minute = map(minute(), 0, 59, 150, 350);
-image(venus, 625, y_minute, 200);
+image(venus, 600, y_minute, 200);
 
 y_second = map(second(), 0, 31, 150, 350);
 image(earth, 850, y_second, 200);
