@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <!--
     Through the Park
 Copyright (c) 2008, 2019 Nick Montfort <nickm@nickm.com>
@@ -15,7 +16,6 @@ without any warranty.
 
     This poem reminded me of my hometown, Virginia Beach, so I remixed it to reflect that.
     -->  
-
 <style>
 /* <![CDATA[ */
 body {
@@ -34,6 +34,7 @@ a {
 }
 /* ]]> */
 </style>
+
 <script>
 var sentences=[
 "The boy smiles and grabs his board",
@@ -64,10 +65,12 @@ var sentences=[
 ];
 var to_drop = 2 * sentences.length / 3;
 var n = 0;
-var text = ""
+var text = "";
+
 function rand_range(max) {
  return Math.floor(Math.random()*(max+1));
 }
+
 function drop(array) {
  var to_remove = rand_range(array.length-1);
  while (array[to_remove].length == 0) {
@@ -76,6 +79,7 @@ function drop(array) {
  array[to_remove] = '';
  return array;
 }
+
 function story() {
  var main=document.getElementById('main');
  for (n=0; n<to_drop; n++) {
@@ -83,20 +87,21 @@ function story() {
  }
  for (n=0; n<sentences.length; n++) {
   if (sentences[n].length > 0) {
-   text += sentences[n] + ". ... "
+   text += sentences[n] + ". ... ";
    }
   }
  last=document.createElement('div');
  last.appendChild(document.createTextNode(text));
  main.appendChild(last);
 }
-</script>
-  <title>Through the Beach</title>
-</head>
-<body onload="story();">
-  <div style="float:right; color:rgb(17, 27, 119); width:250px; font-style:italic">
-  <p>Text &amp; Code: <a href="http://nickm.com">Nick Montfort</a></p>
-  <p>This page, using a very simple bit of JavaScript, generates different stories by omitting different sentences from a prepared list at random each time. <a href="remix1.html">Reload</a> for a different story. This process was implemented first in Python: <a href="through_the_park.py">through_the_park.py</a></p>
 
-  </body>
-  </html>
+window.onload = story; 
+
+</script>
+
+<title>Through the Beach</title>
+</head>
+
+<body>
+  <div style="float:right; color:rgb(17, 27, 119); width:250px; font-style:italic">
+  <p>Text &amp;
