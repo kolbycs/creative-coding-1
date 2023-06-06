@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--
+Stochastic Texts reimplementation
+copyright (c) 2014 Nick Montfort <nickm@nickm.com>
+based on a 1959 program (Stochastische Texte) by Theo Lutz
+the text is a translation of Lutz's German text by Helen MacCormack
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Updated 28 August 2019 to add a link to 1959 teleprinter output.
+https://nickm.com/memslam/stochastic_texts.html
+
+I really liked how such a limited amount of things can make such an interesting poem.
+It almosts makes sense while also making no sense which makes it very engaging.
+I wanted to replicate that feel while giving it my own touch.
+Its titled Scholastic Text as thats the first thing I thought about when reading.
+-->
+    <style type="text/css">
+        /* <![CDATA[ */
+        body {
+            background: #0f4425;
+            color: #ccc;
+            margin: 0 0 0 18pt;
+            font-family: Optima, sans-serif;
+            font-size: 20pt;
+        }
+
+        a {
+            color: rgb(2, 2, 17);
+            text-decoration: none;
+        }
+
+        #main {
+            padding-top: 18px;
+            width: 70%;
+        }
+
+        #main div {
+            font-weight: italic;
+            padding-bottom: 9px;
+        }
+
+        #info {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            height: 100%;
+            width: 25%;
+            color: #f4efef;
+            background: #020202;
+            margin-left: 6px;
+            border-left: thin #000 solid;
+            border-bottom: thin #000 solid;
+            padding: 9px;
+            font-size: 80%
+        }
+
+        /* ]]> */
+    </style>
+    <script type="text/javascript">
+
+        var t = 0,
+            subjects = ['COW', 'DOG', 'FIGHT', 'SCHOOL', 'ABODE', 'PAINTING',
+                'NOSE', 'NEIGHBORHOOD', 'SKYSCRAPER', 'SKATER', 'THING', 'GUY', 'TWILIGHT',
+                'SHED', 'COMPUTER', 'PANHANDLER'],
+            predicates = ['BROKEN', 'POUNDING', 'RESILIENT', 'MORAL', 'LARGE', 'CLOSE',
+                'VINTAGE', 'STINKY', 'TOUGH', 'SMALL', 'EARLY', 'THICK', 'COSTLY',
+                'BULGING', 'WEAK', 'SOMBER'],
+            conjunctions = [' AND ', ' OR ', ' THEREFORE ', '. ', '. ', '. ', '. ', '. '],
+            operators = ['A', 'EVERY', 'NO', 'NOT EVERY'];
+        function rand_range(maximum) {
+            "use strict";
+            return Math.floor(Math.random() * (maximum + 1));
+        }
+        function choose(array) {
+            "use strict";
+            return array[rand_range(array.length - 1)];
+        }
+        function phrase() {
+            "use strict";
+            var text = choose(operators) + ' ' + choose(subjects);
+            if (text === 'A EYE') {
+                text = 'AN EYE';
+            }
+            return text + ' IS ';
+        }
+        function litany() {
+            "use strict";
+            var last, text, main = document.getElementById('main');
+            if (25 > t) {
+                t += 1;
+            } else {
+                main.removeChild(document.getElementById('main').firstChild);
+            }
+            last = document.createElement('div');
+            text = phrase() + choose(predicates) + choose(conjunctions);
+            text = text + phrase() + choose(predicates) + '.';
+            last.innerHTML = text;
+            main.appendChild(last);
+        }
+        function produce_litany() {
+            "use strict";
+            litany();
+            setInterval(litany, 2000);
+        }
+
+    </script>
+    <title>Scholastic Texts</title>
+</head>
+
+<body onload="produce_litany();">
+    <div id="info">
+        <h2>Scholastic Texts</h2>
+        <h3>Theo Lutz, Kolby Simpson</h3>
+        1959<br />
+        Zuse Z22, <a href="http://iasl.uni-muenchen.de/links/GCA_ill32.jpg">teleprinter</a><br />
+        ALGOL 58<br />
+    </div>
+    <div id="main"></div>
+</body>
+
+</html>
