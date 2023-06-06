@@ -16,16 +16,16 @@ let grammar = tracery.createGrammar({
 });
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(1920, 1080);
   noLoop();
 }
 
 function draw() {
   background(220);
   let y = 200;
-  let lineHeight = 50;
-  textSize(30);
-  for (let i = 0; i < 4; i++) {
+  let lineHeight = 110;
+  textSize(15);
+  for (let i = 0; i < 8; i++) {
   poem = grammar.flatten("#origin#");
 text(poem, 70, y);
 y += lineHeight; 
