@@ -24,9 +24,9 @@ function draw() {
   background(220);
   let y = 200;
   let lineHeight = 50;
+  textSize(30);
   for (let i = 0; i < 4; i++) {
-let poem = grammar.flatten("#origin#");
-textSize(30);
-text(poem,70,y);
+  poem = grammar.flatten("#origin#");
+text(poem, 70, y);
 y += lineHeight; 
 }}
