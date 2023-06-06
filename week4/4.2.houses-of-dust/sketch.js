@@ -25,7 +25,7 @@ function draw() {
   let y = 200;
   let lineHeight = 50;
   for (let i = 0; i < 4; i++) {
-poem = grammar.flatten("#origin#");
+let poem = grammar.flatten("#origin#");
 textSize(30);
 text(poem,70,y);
 y += lineHeight; 
