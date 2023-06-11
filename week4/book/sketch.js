@@ -21,7 +21,7 @@ What You Should Do:
    
 */
 
-let word = "quack";
+let word = "never odd or even";
 let wc = 0;
 
 function setup() {
