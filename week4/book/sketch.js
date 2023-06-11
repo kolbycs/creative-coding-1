@@ -15,8 +15,8 @@ function setup() {
     for (let p = 0; p < random(5,30); p++){
       let paragraph = '';
       for (let s = 0; s < random(3,15); s++){
-        let internalPunct = [",",",",",",";"," --"];
-        let endPunct = [".",".","?","!"];
+        let internalPunct = [",",",",",",";"," -",":"];
+        let endPunct = [".",".","?","!","!?"];
         let sentence = words.charAt(0).toUpperCase() + words.slice(1);
         let sentenceLength = random(9,25);
         wc += sentenceLength + 1;
