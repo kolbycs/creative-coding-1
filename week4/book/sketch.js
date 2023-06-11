@@ -50,11 +50,7 @@ function setup() {
       position: 'before',
       continue: 'right'
     }),
-    Bindery.PageBreak({
-      selector: 'p',
-      position: 'after',
-      continue: 'next'
-    }),
+    
   ]
   })
 }
