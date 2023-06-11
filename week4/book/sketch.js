@@ -52,7 +52,7 @@ function setup() {
     }),
     Bindery.PageBreak({
       selector: 'p',
-      position: 'avoid',
+      position: 'both',
       continue: 'next'
     }),
   ]
