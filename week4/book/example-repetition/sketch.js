@@ -73,7 +73,7 @@ function setup() {
     Bindery.PageBreak({
       selector: 'h2',
       position: 'avoid',
-      continue: 'right'
+      
     }),
   ]
   });
