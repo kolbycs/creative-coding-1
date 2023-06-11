@@ -30,6 +30,12 @@ function setup() {
   content.attribute("id","content");
   
   content.child(createElement("h1","Life, " + word + "."));
+
+    // Change page color
+    document.body.style.backgroundColor = "#f5f5dc";
+  
+    // Change text font
+    document.body.style.fontFamily = "cursive";
   
   
   // make a sentence
