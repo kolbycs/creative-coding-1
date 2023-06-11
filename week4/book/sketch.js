@@ -1,80 +1,79 @@
 /*
 
-This is a p5.js sketch that creates a book by repeating some
-word 50000 times, with punctuation and organization added so 
-that it looks more like a real book.
+This is a sketch offering a template for generating a book
+based on a Markov-chain analysis of some existing text. You 
+are welcome to use it. 
 
-You are welcome to use this template to make your own 
-repetion-based computer-generated book.
+Note: this is rather slow. It may take a few minutes to generate a book.
 
-What I Have Done:
- - chosen a word to repeat: quack
- - written the code that repeats that word an arbitrary number of 
-   times, along with punctuation.
-  
-What You Should Do:
- - choose a different word. Animals sounds and screams have already
-   been done. 
- - tweak the book layout options so it looks good.
- - take a look through the code below, which is written in a fairfly
-   verbose way so that you can adjust any aspect you need to. 
+What I have done:
+ - created the workflow 
+ - set up options that usually produce a 50K book
+ 
+What you need to do:
+ - provide your own text file
+ - adjust the options to make it work well
+ - tweak the book presentation to make it look good
+ - check the comments below for places where you can 
+   make adustments
    
 */
 
-let word = "never odd or even";
-let wc = 0;
+
+let lines, fullText, mv,c,wc;
+
+function preload() {
+  lines = loadStrings("warandpeace.txt");
+}
 
 function setup() {
-
+  noCanvas();
+  
+  // the base container for the book
   let content = createElement("div");
   content.attribute("id","content");
-  
-  content.child(createElement("h1","Life, " + word + "."));
 
-  // make a sentence
+  // build the markov model
+  // see options at: https://rednoise.org/rita/reference/RiTa/markov/index.html 
+  mv = RiTa.markov(2, {'disableInputChecks': true, 'temperature': 100, 'maxAttempts': 9999});
+  mv.addText(lines.join(" "));
   
-  while( wc < 50000){
-    content.child(createElement("h2",String(word+" ").repeat(random(2,6)).toUpperCase()));
+  // creates a title for the book by generating a sentence
+  content.child(createElement("h1", mv.generate(1)));
+  
+  
+  c = 1;
+  do {
     
-    for (let p = 0; p < random(5,30); p++){
-      let paragraph = '';
-      for (let s = 0; s < random(3,15); s++){
-        let internalPunct = [",",",",",",";"," --"];
-        let endPunct = [".",".","?","!"];
-        let sentence = word.charAt(0).toUpperCase() + word.slice(1);
-        let sentenceLength = random(9,25);
-        wc += sentenceLength + 1;
-        for (let w = 0; w < sentenceLength; w++){
-          sentence += " " + word;
-          if (random() < 0.2){
-            sentence += random(internalPunct);
-          }
-        }
-        sentence += random(endPunct) + " ";
-        paragraph += sentence;
-      }
-      content.child(createElement("p",paragraph));
+    // create chapter titles from single sentences.
+    content.child( createElement("h2","Chapter " + c + ": " + mv.generate(1)));
+    let newText = "";
+    // use random() to specify the minimum and maximum
+    // paragraphs per chapter
+    for (let p = 0; p < random(12,60); p++ ){
+     
+      // generate a random number of sentences, using
+      // random() to dictate min and max sentences
+      let sentGen = mv.generate(floor(random(1,7)));
+      
+      let sentences = (typeof sentGen == 'object') ? sentGen.join(" ") : sentGen;
+            newText += "<p>" + sentences  + "</p>";   
     }
-    
-  
-    
+    content.child(createElement("div", newText));
+   
+    c++;
   }
-  
-  // make a book out of all the content
+  while (c < 50); // the number of chapters to generate.
+    
+  // Make it into a book
   Bindery.makeBook({
     content: '#content',
     
     rules: [
       Bindery.PageBreak({
         selector: "h1",
-        position: "after"
-      }),
-    Bindery.PageBreak({
-      selector: 'h2',
-      position: 'before',
-      continue: 'right'
-    })]
+        position: "after",
+      })]
   });
   
-  //console.log(sentence);
 }
