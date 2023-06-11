@@ -21,63 +21,45 @@ What You Should Do:
    
 */
 
-let word = "never odd or even";
-let wc = 0;
+let myBook = "";
 
 function setup() {
-  let content = createElement("div");
-  content.attribute("id","content");
+ noCanvas();
   
-  content.child(createElement("h1","Life, " + word + "."));
+ let content = createDiv();
+  content.id("content");
+  
+let bookTitle = createElement("h1","Life, never odd or even");
 
-  // make a sentence
-  
-  while( wc < 50000){
-    content.child(createElement("h2",String(word+" ").repeat(random(2,6)).toUpperCase()));
-    
-    for (let p = 0; p < random(5,30); p++){
-      let paragraph = '';
-      for (let s = 0; s < random(3,15); s++){
-        let internalPunct = [",",",",",",";"," --"];
-        let endPunct = [".",".","?","!"];
-        let sentence = word.charAt(0).toUpperCase() + word.slice(1);
-        let sentenceLength = random(9,25);
-        wc += sentenceLength + 1;
-        for (let w = 0; w < sentenceLength; w++){
-          sentence += " " + word;
-          if (random() < 0.2){
-            sentence += random(internalPunct);
-          }
-        }
-        sentence += random(endPunct) + " ";
-        paragraph += sentence;
-      }
-      content.child(createElement("p",paragraph));
-    }
-    
-  
-    
-  }
-  
-  // make a book out of all the content
-  Bindery.makeBook({
-    content: '#content',
-    
-    rules: [
-      Bindery.PageBreak({
-        selector: "h1",
-        position: "after"
-      }),
-    Bindery.PageBreak({
-      selector: 'h2',
-      position: 'before',
-      continue: 'right'
-    }),
-    Bindery.PageBreak({
-      selector: 'p',
-      position: 'after',
-      continue: 'next'
-    }),
-  ]
-  })
+content.child(bookTitle);
+
+for (let w = 0; w < 50000; w++){
+myBook += random([
+"never odd or even",
+"NEVER ODD OR EVEN",
+"Never odd or even",
+]);
+myBook += random([
+  "",
+  "",
+  "",
+  "",
+  "",
+  ".",
+  ",",
+  "--",
+  "!",
+  "?",
+  "?!"
+]);
+}
+
+let bookContent = createDiv(myBook);
+
+content.child(bookContent);
+
+Bindery.makeBook({
+  content: '#content#'
+});
+
 }
