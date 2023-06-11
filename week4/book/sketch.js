@@ -78,10 +78,6 @@ function setup() {
       position: 'after',
       continue: 'next'
     }),
-    Bindery.PageNumber({
-      selector: 'h1, h2, p',
-      position: 'bottom-right'
-    })
   ]
   })
 }
