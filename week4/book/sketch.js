@@ -73,6 +73,12 @@ function setup() {
       selector: 'h2',
       position: 'before',
       continue: 'right'
-    })]
+    }),
+    Bindery.PageBreak({
+      selector: 'p',
+      position: 'after',
+      continue: 'next'
+    })
+  ]
   })
 }
