@@ -31,21 +31,14 @@ function setup() {
   
   content.child(createElement("h1","Life, " + word + "."));
 
-    // Change page color
-    document.body.style.backgroundColor = "#f5f5dc";
-  
-    // Change text font
-    document.body.style.fontFamily = "cursive";
-  
-  
   // make a sentence
   
   while( wc < 50000){
     content.child(createElement("h2",String(word+" ").repeat(random(2,6)).toUpperCase()));
     
-    for (let p = 0; p < random(5,20); p++){
+    for (let p = 0; p < random(5,30); p++){
       let paragraph = '';
-      for (let s = 0; s < random(3,20); s++){
+      for (let s = 0; s < random(3,15); s++){
         let internalPunct = [",",",",",",";"," --"];
         let endPunct = [".",".","?","!"];
         let sentence = word.charAt(0).toUpperCase() + word.slice(1);
