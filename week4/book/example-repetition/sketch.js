@@ -74,7 +74,9 @@ function setup() {
       selector: 'h2',
       position: 'before',
       continue: 'right'
-    })]
+    }),
+  Bindery.RunningHeader({})
+  ]
   });
   
   //console.log(sentence);
