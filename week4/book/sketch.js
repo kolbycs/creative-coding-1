@@ -59,7 +59,7 @@ let bookContent = createDiv(myBook);
 content.child(bookContent);
 
 Bindery.makeBook({
-  content: '#content#'
+  content: 'content'
 });
 
 }
