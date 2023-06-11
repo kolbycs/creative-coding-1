@@ -29,7 +29,7 @@ function setup() {
   let content = createElement("div");
   content.attribute("id","content");
   
-  content.child(createElement("h1","Many " + word + "s"));
+  content.child(createElement("h1","Life," + word + "."));
   
   
   // make a sentence
