@@ -25,11 +25,6 @@ let word = "never odd or even";
 let wc = 0;
 
 function setup() {
-
-  let style = createElement('style');
-  style.html('body { background-color: #f5f5dc; }');
-  document.head.appendChild(style);
-
   let content = createElement("div");
   content.attribute("id","content");
   
