@@ -26,6 +26,10 @@ let wc = 0;
 
 function setup() {
 
+  let style = createElement('style');
+  style.html('body { background-color: #f5f5dc; }');
+  document.head.appendChild(style);
+
   let content = createElement("div");
   content.attribute("id","content");
   
@@ -78,6 +82,10 @@ function setup() {
       selector: 'p',
       position: 'after',
       continue: 'next'
+    }),
+    Bindery.PageNumber({
+      selector: 'h1, h2, p',
+      position: 'bottom-right'
     })
   ]
   })
