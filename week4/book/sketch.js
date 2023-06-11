@@ -1,4 +1,4 @@
-let words =  ["never odd or even", "NEVER ODD OR EVEN", "Never odd or even", "never odd or eveN"];
+let words = "never odd or even";
 let wc = 0;
 
 function setup() {
