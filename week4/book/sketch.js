@@ -29,15 +29,12 @@ function setup() {
         sentence += random(endPunct) + " ";
         paragraph += sentence;
       }
-      content.child(createElement("p",paragraph))
-      
+      content.child(createElement("p",paragraph));
     }
+    
+  
+    
   }
-    
-    
-  
-    
-  
   
   // make a book out of all the content
   Bindery.makeBook({
@@ -47,8 +44,8 @@ function setup() {
       Bindery.PageBreak({
         selector: "h1",
         position: "after",
-        continue: "right",
-        header: (info) => `Book Title | Page ${info.pageNumber}`,
+        continue: 'right', //
+      header: (info) => `Book Title | Page ${info.pageNumber}`, //
       }),
     Bindery.PageBreak({
       selector: 'h2',
