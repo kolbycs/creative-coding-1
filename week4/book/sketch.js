@@ -9,6 +9,8 @@ function setup() {
 
   let picture = createImg("creative-coding/creative-coding/week4/book/wave.jpg");
   picture.attribute("id", "wave");
+  picture.style("width", "200px");
+picture.style("height", "auto");
   content.child(picture);
 
   // make a sentence
