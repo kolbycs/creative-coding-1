@@ -29,8 +29,8 @@ function setup() {
         sentence += random(endPunct) + " ";
         paragraph += sentence;
       }
-      //content.child(createElement("p",paragraph))
-      content.child(createElement("p").style("font-family", "Georgia").style("font-size", "16px").style("line-height", "1.5").style("text-align", "justify").html(paragraph));
+      content.child(createElement("p",paragraph))
+      
     }
   }
     
