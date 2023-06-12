@@ -7,8 +7,11 @@ function setup() {
    content.style("font-family", "Times New Roman, serif");
   content.child(createElement("h1","Life, " + words + "."));
 
+  let picture = createImg("creative-coding/creative-coding/week4/book/wave.jpg");
+  picture.attribute("id", "wave");
+  content.child(picture);
+
   // make a sentence
-  
   while( wc < 50000){
     content.child(createElement("h2",String(words+" ").repeat(random(2,8)).toUpperCase()));
     
@@ -50,7 +53,11 @@ function setup() {
       position: 'before',
       continue: 'right'
     }),
-    
+    Bindery.PageBreak({
+      selector: "body.blank",
+      position: "after",
+      content: picture,
+    }),
   ],
   
 })
