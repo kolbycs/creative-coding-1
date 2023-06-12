@@ -49,7 +49,6 @@ function setup() {
       selector: 'h2',
       position: 'before',
       continue: 'right'
-      header: (info) => `Book Title | Page ${info.pageNumber}`,
     }),
     
   ]
