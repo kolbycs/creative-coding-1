@@ -21,7 +21,7 @@ function setup() {
         wc += sentenceLength + 1;
         for (let w = 0; w < sentenceLength; w++){
           sentence += " " + words;
-          if (random() < 0.2){
+          if (random() < 0.4){
             sentence += random(internalPunct);
           }
         }
