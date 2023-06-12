@@ -3,8 +3,8 @@ let wc = 0;
 
 function setup() {
   let content = createElement("div");
-  content.attribute("id","content");
-  
+   content.attribute("id","content");
+   content.style("font-family", "Times New Roman, serif");
   content.child(createElement("h1","Life, " + words + "."));
 
   // make a sentence
@@ -15,8 +15,8 @@ function setup() {
     for (let p = 0; p < random(10,50); p++){ 
       let paragraph = '';
       for (let s = 0; s < random(3,15); s++){
-        let internalPunct = [",",",",",",";"," -",":"];
-        let endPunct = [".",".","?","!","!?"];
+        let internalPunct = [",",",",",",",",",",",",",",",",","];
+        let endPunct = [".",".",".",".",".",".",".","."];
         let sentence = words.charAt(0).toUpperCase() + words.slice(1);
         let sentenceLength = random(9,35);
         wc += sentenceLength + 1;
@@ -51,6 +51,7 @@ function setup() {
       continue: 'right'
     }),
     
-  ]
-  })
+  ],
+  
+})
 }
