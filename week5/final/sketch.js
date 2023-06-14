@@ -2,6 +2,7 @@ let x = 0
 let y = 0
 let yspeed = 5
 let xspeed = 5
+let released = false;
 function preload(){
   obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
   target = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
@@ -15,8 +16,24 @@ function setup() {
 function draw() {
   background('grey');
 
-  if (x < 0 || x > width){  // detect collosion with walls
-    xspeed = xspeed * -1; // reverse the x direction
+  //if (x < 0 || x > width){  // detect collosion with walls
+    //xspeed = xspeed * -1; // reverse the x direction
+//}
+
+if (!released && mouseIsPressed) {
+  released = true; // Release the object
+}
+
+if (released) {
+  if (x < 0 || x > width || y < 0 || y > height) {
+    // Object hits a wall, reset its position
+    x = 0;
+    y = 0;
+    released = false;
+  } else if (dist(x, height / 2, width * 3 / 4, y) < 40) {
+    // Object hits the target, make it disappear
+    released = false;
+  }
 }
 
 if (y < 0 || y > height){ //detect collision with walls
