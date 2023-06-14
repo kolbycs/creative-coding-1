@@ -22,12 +22,13 @@ if (!released && mouseIsPressed) {
 }
 
 if (released) {
-  if (x < -40 || x > width && !targetHit) {
+  if (x < -40 || x > width) {
     // Object hits a wall, reset its position
     x = 0;
     y = 0;
     released = false;
-  } else if (dist(x,y,width*3/4,height/2-40) < 2 && !targetHit) {
+    targetHit = false; 
+  } else if (!targetHit && dist(x, y, width * 3 / 4, height / 2 - 40) < 2) {
     // Object hits the target, make it disappear
     targetHit = true;
     released = false;
@@ -47,5 +48,5 @@ image(obj,x-40,height/2-40,80,80);  //create object on x axis
 if (!targetHit) {
 image(target,width*3/4,y-40,80,80);  //create target on y axis
 }
-image(man,-10,height/2-40,80,80);            //create stationary man to the left end of x axis 
+image(man,-10,height/2-40,80,80);    //create stationary man to the left end of x axis 
 }
