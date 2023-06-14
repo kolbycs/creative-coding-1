@@ -17,6 +17,7 @@ function preload() {
   bg = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/background.jpeg'); 
 }
 
+//https://kolbycs.github.io/creative-coding-true/week5/final/index.html
 function setup() {
   createCanvas(1080, 720);
   targetX = width * 3 / 4;
