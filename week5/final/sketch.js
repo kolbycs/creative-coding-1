@@ -21,7 +21,7 @@ if (!released && mouseIsPressed) {
 }
 
 if (released) {
-  if (x < 0 || x > width || y < 0 || y > height) {
+  if (x < -40 || x > width) {
     // Object hits a wall, reset its position
     x = 0;
     y = 0;
