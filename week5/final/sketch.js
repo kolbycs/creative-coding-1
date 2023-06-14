@@ -15,11 +15,7 @@ function setup() {
 
 function draw() {
   background('grey');
-
-  //if (x < 0 || x > width){  // detect collosion with walls
-    //xspeed = xspeed * -1; // reverse the x direction
-//}
-
+  
 if (!released && mouseIsPressed) {
   released = true; // Release the object
 }
@@ -43,7 +39,9 @@ if (y < 0 || y > height){ //detect collision with walls
 y = y + yspeed; //iterate y
 x = x + xspeed; //iterate x
 
+if (released) {
 image(obj,x-40,height/2-40,80,80);  //create object on x axis
+}
 image(target,width*3/4,y-40,80,80);  //create target on y axis
 image(man,-10,height/2-40,80,80);            //create stationary man to the left end of x axis 
 }
