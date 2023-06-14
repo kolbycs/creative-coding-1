@@ -1,10 +1,15 @@
-let x = 0
-let y = 0
-let yspeed = 2
-let xspeed = 5
+let x = 0;
+let y = 0;
+let yspeed = 2;
+let xspeed = 5;
 let released = false;
 let targetHit = false;
-function preload(){
+
+let targetX = 0; // Initial x position of the target
+let targetY = 0; // Initial y position of the target
+let targetYspeed = 2; // Initial y speed of the target
+
+function preload() {
   obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
   target = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
   man = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/man.jpg');
@@ -12,37 +17,53 @@ function preload(){
 
 function setup() {
   createCanvas(1080, 720);
+  targetX = width * 3 / 4;
+  targetY = height / 2;
 }
 
 function draw() {
   background('grey');
-  
-if (!released && mouseIsPressed) {
-  released = true; // Release the object
-}
-if (released) {
-  if (x < -40 || x > width || targetHit) {
-    // Object hits a wall or target, reset its position and disappear
-    x = 0;
-    y = 0;
-    released = false;
-    targetHit = false;
+
+  if (!released && mouseIsPressed) {
+    released = true; // Release the object
   }
-}
-
-if (y < 0 || y > height){ //detect collision with walls
-  yspeed = yspeed * -1; // reverse the y direction
   
-}
-y = y + yspeed; //iterate y
-x = x + xspeed; //iterate x
+  if (released) {
+    if (x < -40 || x > width || targetHit) {
+      // Object hits a wall or target, reset its position and disappear
+      x = 0;
+      y = 0;
+      released = false;
+      targetHit = false;
+    }
+  }
 
-if (released && !targetHit) {
-image(obj,x-40,height/2-40,80,80);  //create object on x axis
-}
+  if (y < 0 || y > height) {
+    yspeed = -yspeed; // Reverse the y direction when hitting the walls
+  }
+  
+  y = y + yspeed; // Iterate y
+  x = x + xspeed; // Iterate x
 
-image(target,width*3/4,y-40,80,80);  //create target on y axis
+  if (released && !targetHit) {
+    image(obj, x - 40, height / 2 - 40, 80, 80); // Create object on x-axis
+  }
+  
+  // Calculate the distance between the centers of the object and target
+  let distance = dist(x, y, targetX, targetY);
+  let objectRadius = 40;
+  let targetRadius = 40;
 
-image(man,-10,height/2-40,80,80);    //create stationary man to the left end of x axis 
+  if (distance < objectRadius + targetRadius) {
+    targetHit = true; // Collision detected
+  }
 
+  // Restore the target's position and speed if the object is reset
+  if (!released) {
+    targetY = targetY + targetYspeed;
+  }
+  
+  image(target, targetX - targetRadius, targetY - targetRadius, 80, 80); // Create target on y-axis
+
+  image(man, -10, height / 2 - 40, 80, 80); // Create stationary man to the left end of x-axis
 }
