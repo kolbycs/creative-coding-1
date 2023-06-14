@@ -59,8 +59,11 @@ function draw() {
   let objectRadius = 40;
   let targetRadius = 40;
 
-  if (distance < objectRadius + targetRadius) {
-    targetHit = true; // Collision detected
+  if (distance <= objectRadius + targetRadius) {
+    if (!targetHit) {
+      targetHit = true; // Collision detected
+      counter++; // Increment the counter on collision
+    }
   }
 
   // Restore the target's position and speed if the object is reset
