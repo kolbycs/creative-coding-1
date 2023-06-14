@@ -3,7 +3,7 @@ let y = 0
 let yspeed = 5
 let xspeed = 5
 function preload(){
-  obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpg');
+  obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
   target = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
 }
 
