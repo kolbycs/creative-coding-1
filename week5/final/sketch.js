@@ -4,7 +4,7 @@ let yspeed = 2;
 let xspeed = 5;
 let released = false;
 let targetHit = false;
-
+let counter = 0; // Counter variable
 let targetX = 0; // Initial x position of the target
 let targetY = 0; // Initial y position of the target
 let targetYspeed = 2; // Initial y speed of the target
@@ -37,6 +37,9 @@ function draw() {
       y = 0;
       released = false;
       targetHit = false;
+      if (targetHit) {
+        counter++; // Increment the counter on collision
+      }
     }
   }
 
@@ -75,5 +78,11 @@ function draw() {
   image(target, targetX - targetRadius, targetY - targetRadius, 80, 80); // Create target on y-axis
 
   image(man, -10, height / 2 - 40, 80, 80); // Create stationary man to the left end of x-axis
+
+  textSize(24);
+  fill(0);
+  textAlign(RIGHT, TOP)
+  text("hits: " + counter, width - 10, 10);
+
 }
 
