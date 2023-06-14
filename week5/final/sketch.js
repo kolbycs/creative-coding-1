@@ -23,8 +23,8 @@ if (y < 0 || y > height){ //detect collision with walls
   
 }
   y = y + yspeed; //iterate y
-x = x + xspeed; // iterate x
+x = x + xspeed; //iterate x
 
-image(obj,x-40,height / 2 - 40,80,80);  //create object on x axis
-image(target,width / 2 - 40, y-40,80,80);  //create target on y axis
+image(obj,x-100,height/2-40,80,80);  //create object on x axis
+image(target,width/2-40,y-40,80,80);  //create target on y axis
 }
