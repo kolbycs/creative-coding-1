@@ -60,10 +60,10 @@ function draw() {
     targetHit = true; // Collision detected
   }
 
-  // Restore the target's position and speed if the object is reset
-  //if (!released) {
+  // Restore the target's position and speed
+  
     targetY = targetY + targetYspeed * targetDirection;
-  //}
+  
   
   // Reverse the target's direction when hitting the walls
   if (targetY < targetRadius || targetY > height - targetRadius) {
