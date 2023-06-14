@@ -1,6 +1,6 @@
 let x = 0;
 let y = 0;
-let yspeed = 2;
+let yspeed = 5;
 let xspeed = 5;
 let released = false;
 let targetHit = false;
