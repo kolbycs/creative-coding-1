@@ -14,7 +14,7 @@ function preload() {
   obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
   target = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
   man = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/man.jpg');
-  bg = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/background.jpeg'); // Changed variable name to "bg"
+  bg = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/background.jpeg'); 
 }
 
 function setup() {
@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  background(bg); // Changed variable name to "bg"
+  background(bg); 
 
   if (!released && mouseIsPressed) {
     released = true; // Release the object
