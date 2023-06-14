@@ -26,7 +26,7 @@ if (released) {
     x = 0;
     y = 0;
     released = false;
-  } else if (dist(x, height / 2, width * 3 / 4, y) < 2) {
+  } else if (dist(width*3/4,y-40,80,80) < 2) {
     // Object hits the target, make it disappear
     released = false;
   }
