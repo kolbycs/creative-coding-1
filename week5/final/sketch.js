@@ -1,10 +1,10 @@
 let x = 0;
 let y = 0;
-let yspeed = 5;
+let yspeed = 2;
 let xspeed = 5;
 let released = false;
 let targetHit = false;
-let counter = 0; // Counter variable
+
 let targetX = 0; // Initial x position of the target
 let targetY = 0; // Initial y position of the target
 let targetYspeed = 2; // Initial y speed of the target
@@ -14,7 +14,7 @@ function preload() {
   obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
   target = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
   man = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/man.jpg');
-  bg = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/background.jpeg');
+  bg = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/background.jpeg'); // Changed variable name to "bg"
 }
 
 function setup() {
@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  background(bg);
+  background(bg); // Changed variable name to "bg"
 
   if (!released && mouseIsPressed) {
     released = true; // Release the object
@@ -37,9 +37,6 @@ function draw() {
       y = 0;
       released = false;
       targetHit = false;
-      if (targetHit) {
-        counter++; // Increment the counter on collision
-      }
     }
   }
 
@@ -59,11 +56,8 @@ function draw() {
   let objectRadius = 40;
   let targetRadius = 40;
 
-  if (distance <= objectRadius + targetRadius) {
-    if (!targetHit) {
-      targetHit = true; // Collision detected
-      counter++; // Increment the counter on collision
-    }
+  if (distance < objectRadius + targetRadius) {
+    targetHit = true; // Collision detected
   }
 
   // Restore the target's position and speed if the object is reset
@@ -81,12 +75,8 @@ function draw() {
   image(target, targetX - targetRadius, targetY - targetRadius, 80, 80); // Create target on y-axis
 
   image(man, -10, height / 2 - 40, 80, 80); // Create stationary man to the left end of x-axis
-
-  textSize(24);
-  fill(0);
-  textAlign(RIGHT, TOP);
-  text("Hits: " + counter, width - 10, 10);
 }
+
 
 
 
