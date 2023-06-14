@@ -2,7 +2,8 @@ let x = 0
 let y = 200
 let xspeed = 5
 function preload(){
-  img = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
+  obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
+  man = loadImage('');
 }
 
 function setup() {
@@ -17,6 +18,6 @@ function draw() {
 }
 
 x = x + xspeed; // iterate x
-image(img,x-40,y-40,80,80);
+image(obj,x-40,40,80,80);
 
 }
