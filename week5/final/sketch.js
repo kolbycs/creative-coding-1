@@ -1,16 +1,16 @@
 let x = 0
-let y = 400
-let xspeed = 1
+let y = 200
+let xspeed = 5
 function preload(){
   img = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
 }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(1920, 1080);
 }
 
 function draw() {
-  background('blue');
+  background('grey');
 
   if (x < 0 || x > width){  // detect collosion with walls
     xspeed = xspeed * -1; // reverse the x direction
