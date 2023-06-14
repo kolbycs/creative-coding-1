@@ -20,18 +20,13 @@ function draw() {
 if (!released && mouseIsPressed) {
   released = true; // Release the object
 }
-
 if (released) {
-  if (x < -40 || x > width) {
-    // Object hits a wall, reset its position
+  if (x < -40 || x > width || targetHit) {
+    // Object hits a wall or target, reset its position and disappear
     x = 0;
     y = 0;
     released = false;
-    targetHit = false; 
-  } else if (!targetHit && dist(x, y, width * 3 / 4, height / 2 - 40) < 2) {
-    // Object hits the target, make it disappear
-    targetHit = true;
-    released = false;
+    targetHit = false;
   }
 }
 
@@ -45,8 +40,9 @@ x = x + xspeed; //iterate x
 if (released && !targetHit) {
 image(obj,x-40,height/2-40,80,80);  //create object on x axis
 }
-if (!targetHit) {
+
 image(target,width*3/4,y-40,80,80);  //create target on y axis
-}
+
 image(man,-10,height/2-40,80,80);    //create stationary man to the left end of x axis 
+
 }
