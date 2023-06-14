@@ -1,6 +1,6 @@
 let x = 0
 let y = 0
-let yspeed = 5
+let yspeed = 2
 let xspeed = 5
 let released = false;
 function preload(){
@@ -26,7 +26,7 @@ if (released) {
     x = 0;
     y = 0;
     released = false;
-  } else if (dist(width*3/4,y-40,80,80) < 2) {
+  } else if (dist(x, y, width * 3 / 4, y-40) < 2) {
     // Object hits the target, make it disappear
     released = false;
   }
