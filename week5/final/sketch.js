@@ -42,7 +42,7 @@ if (y < 0 || y > height){ //detect collision with walls
 y = y + yspeed; //iterate y
 x = x + xspeed; //iterate x
 
-if (released) {
+if (released && !targetHit) {
 image(obj,x-40,height/2-40,80,80);  //create object on x axis
 }
 if (!targetHit) {
