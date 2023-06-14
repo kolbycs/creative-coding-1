@@ -37,6 +37,9 @@ function draw() {
       y = 0;
       released = false;
       targetHit = false;
+      if (targetHit) {
+        counter++; // Increment the counter on collision
+      }
     }
   }
 
@@ -57,10 +60,7 @@ function draw() {
   let targetRadius = 40;
 
   if (distance < objectRadius + targetRadius) {
-    if (!targetHit) {
-      counter++; // Increment the counter only once per collision
-    }
-    targetHit = true;
+    targetHit = true; // Collision detected
   }
 
   // Restore the target's position and speed if the object is reset
@@ -82,8 +82,9 @@ function draw() {
   textSize(24);
   fill(0);
   textAlign(RIGHT, TOP);
-  text("hits: " + counter, width - 10, 10);
+  text("Hits: " + counter, width - 10, 10);
 }
+
 
 
 
