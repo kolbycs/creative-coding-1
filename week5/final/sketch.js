@@ -8,6 +8,7 @@ let targetHit = false;
 let targetX = 0; // Initial x position of the target
 let targetY = 0; // Initial y position of the target
 let targetYspeed = 2; // Initial y speed of the target
+let targetDirection = 1; // Initial direction of the target's movement 
 
 function preload() {
   obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
@@ -60,10 +61,18 @@ function draw() {
 
   // Restore the target's position and speed if the object is reset
   if (!released) {
-    targetY = targetY + targetYspeed;
+    targetY = targetY + targetYspeed * targetDirection;
   }
   
+  // Reverse the target's direction when hitting the walls
+  if (targetY < targetRadius || targetY > height - targetRadius) {
+    targetDirection *= -1;
+  }
+  
+  targetY = targetY + targetYspeed * targetDirection; // Iterate target's y-position
+
   image(target, targetX - targetRadius, targetY - targetRadius, 80, 80); // Create target on y-axis
 
   image(man, -10, height / 2 - 40, 80, 80); // Create stationary man to the left end of x-axis
 }
+
