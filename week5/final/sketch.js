@@ -5,6 +5,7 @@ let xspeed = 5
 function preload(){
   obj = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/obj.jpeg');
   target = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/target.jpg');
+  man = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/man.jpg');
 }
 
 function setup() {
@@ -22,9 +23,10 @@ if (y < 0 || y > height){ //detect collision with walls
   yspeed = yspeed * -1; // reverse the y direction
   
 }
-  y = y + yspeed; //iterate y
+y = y + yspeed; //iterate y
 x = x + xspeed; //iterate x
 
 image(obj,x-100,height/2-40,80,80);  //create object on x axis
 image(target,width/2-40,y-40,80,80);  //create target on y axis
+image(man,-80,y-40,80,80);
 }
