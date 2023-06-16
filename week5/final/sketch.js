@@ -1,9 +1,10 @@
 let x = 0;
 let y = 0;
-let yspeed = 2;
-let xspeed = 5;
+let yspeed = 2; // Speed of target
+let xspeed = 5; // Speed of dart
 let released = false;
 let targetHit = false;
+let score = 0; // Score counter
 
 let targetX = 0; // Initial x position of the target
 let targetY = 0; // Initial y position of the target
@@ -17,23 +18,23 @@ function preload() {
   bg = loadImage('https://kolbycs.github.io/creative-coding-true/week5/final/background.jpeg'); 
 }
 
-//https://kolbycs.github.io/creative-coding-true/week5/final/index.html
+
 function setup() {
   createCanvas(1080, 720);
-  targetX = width * 3 / 4;
-  targetY = height / 2;
+  targetX = width * 3 / 4; //Position the object and target
+  targetY = height / 2; 
 }
 
 function draw() {
   background(bg); 
 
   if (!released && mouseIsPressed) {
-    released = true; // Release the object
+    released = true; // Release the object (dart) if the mouse is pressed
   }
   
   if (released) {
     if (x < -40 || x > width || targetHit) {
-      // Object hits a wall or target, reset its position and disappear
+      // If the object hits a wall, reset its position and disappear
       x = 0;
       y = 0;
       released = false;
@@ -49,7 +50,7 @@ function draw() {
   x = x + xspeed; // Iterate x
 
   if (released && !targetHit) {
-    image(obj, x - 40, height / 2 - 40, 80, 80); // Create object on x-axis
+    image(obj, x - 40, height / 2 - 40, 80, 80); // Create object (dart) on x-axis
   }
   
   // Calculate the distance between the centers of the object and target
@@ -58,9 +59,11 @@ function draw() {
   let targetRadius = 40;
 
   if (distance < objectRadius + targetRadius) {
-    targetHit = true; // Collision detected
+    targetHit = true; // Detect collision between the dart and target
+    score++; //Add 1 to score counter when the target is hit
   }
 
+  // Code to keep the target going if the object collides with it
   // Restore the target's position and speed
   
     targetY = targetY + targetYspeed * targetDirection;
@@ -75,7 +78,11 @@ function draw() {
 
   image(target, targetX - targetRadius, targetY - targetRadius, 80, 80); // Create target on y-axis
 
-  image(man, -10, height / 2 - 40, 80, 80); // Create stationary man to the left end of x-axis
+  image(man, -10, height / 2 - 40, 80, 80); // Create the player
+
+  fill(0);   //Create score counter
+  textSize(20);
+  text("Score: " + score, 10, 30);
 }
 
 
