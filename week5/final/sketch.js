@@ -5,7 +5,6 @@ let xspeed = 5; // Speed of dart
 let released = false;
 let targetHit = false;
 let score = 0; // Score counter
-
 let targetX = 0; // Initial x position of the target
 let targetY = 0; // Initial y position of the target
 let targetYspeed = 2; // Initial y speed of the target
@@ -21,7 +20,7 @@ function preload() {
 
 function setup() {
   createCanvas(1080, 720);
-  targetX = width * 3 / 4; //Position the object and target
+  targetX = width * 3 / 4; // Position the object and target
   targetY = height / 2; 
 }
 
@@ -60,7 +59,7 @@ function draw() {
 
   if (distance < objectRadius + targetRadius) {
     targetHit = true; // Detect collision between the dart and target
-    score++; //Add 1 to score counter when the target is hit
+    score++; // Add 1 to score counter when the target is hit
   }
 
   // Code to keep the target going if the object collides with it
@@ -80,7 +79,7 @@ function draw() {
 
   image(man, -10, height / 2 - 40, 80, 80); // Create the player
 
-  fill(0);   //Create score counter
+  fill(0);   // Create score counter
   textSize(20);
   text("Score: " + score, 10, 30);
 }
