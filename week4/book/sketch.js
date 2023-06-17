@@ -38,7 +38,7 @@ function setup() {
   // make a book out of all the content
   Bindery.makeBook({
     content: '#content',
-    
+    view: Bindery.View.FLIPBOOK,
     rules: [
       Bindery.RunningHeader({
         render: (pageInfo) => pageInfo.isLeft
