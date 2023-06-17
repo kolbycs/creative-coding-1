@@ -41,4 +41,5 @@ for (let x = 0; x <= img.width; x += sampleX ) { //code from video to set up pix
   
   fill(r,g,b); //fill with color data 
   
-  }
+  }}
+}
