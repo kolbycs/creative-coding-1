@@ -27,16 +27,16 @@ function draw() {
 push();
 
 y_day = map(day(), 0, 23, 150, 350); //map different units of time to map a vertical path
-image(sun, 10, y_day,400, 400);    //apply path calculated to the image
+image(sun, 10, y_day, 500, 500);    //apply path calculated to the image
 
 y_hour = map(hour(), 0, 59, 150, 350);
-image(mercury, 430, y_hour, 200, 200);
+image(mercury, 530, y_hour, 200, 200);
 
 y_minute = map(minute(), 0, 59, 150, 350);
-image(venus, 700, y_minute, 200, 200);
+image(venus, 760, y_minute, 200, 200);
 
 y_second = map(second(), 0, 59, 150, 350);
-image(earth, 950, y_second, 200, 200);
+image(earth, 1000, y_second, 200, 200);
 
 pop();
 
