@@ -30,13 +30,13 @@ y_day = map(day(), 0, 23, 150, 350); //map different units of time to map a vert
 image(sun, 10, y_day, 500, 500);    //apply path calculated to the image
 
 y_hour = map(hour(), 0, 59, 150, 350);
-image(mercury, 530, y_hour, 200, 200);
+image(mercury, 530, y_hour, 125, 125);
 
 y_minute = map(minute(), 0, 59, 150, 350);
-image(venus, 760, y_minute, 200, 200);
+image(venus, 760, y_minute, 125, 125);
 
 y_second = map(second(), 0, 59, 150, 350);
-image(earth, 1000, y_second, 200, 200);
+image(earth, 1000, y_second, 125, 125);
 
 pop();
 
