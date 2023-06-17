@@ -26,8 +26,12 @@ var b = img.pixels[index + 2];
 
 fill(r,g,b); //fill with color data 
 
-//triangle(x, y, x + sampleX, y, x + sampleX / 2, y + sampleY); //create triangles
-image(img, x, y, sampleX, sampleY, x, y, sampleX, sampleY);
+triangle(x, y, x + sampleX, y, x + sampleX / 2, y + sampleY); //create triangles
+
+rect(x, y, sampleX, sampleY);
+
+circle(x + sampleX / 2, y + sampleY / 2, sampleX);
+
 }
 
 }
