@@ -40,6 +40,11 @@ function setup() {
     content: '#content',
     
     rules: [
+      Bindery.RunningHeader({
+        render: (pageInfo) => pageInfo.isLeft
+          ? `${pageInfo.number} · ${pageInfo.heading.h1}`
+          : `${pageInfo.heading.h2} · ${pageInfo.number}`
+      }),
       Bindery.PageBreak({
         selector: "h1",
         position: "after",
