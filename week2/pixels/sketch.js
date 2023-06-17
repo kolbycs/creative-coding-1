@@ -27,13 +27,36 @@ var b = img.pixels[index + 2];
 fill(r,g,b); //fill with color data 
 
 triangle(x, y, x + sampleX, y, x + sampleX / 2, y + sampleY); //create triangles
+}}
 
+for (let x = 0; x <= img.width; x += sampleX ) { //code from video to set up pixel data
+
+  for (let y = 0; y <= img.height; y += sampleY ){
+  
+  var index = (x + y * img.width) * 4;
+  
+  var r = img.pixels[index + 0];
+  var g = img.pixels[index + 1];
+  var b = img.pixels[index + 2];
+  
+  fill(r,g,b); //fill with color data 
+  
 rect(x, y, sampleX, sampleY);
+  }}
 
+  for (let x = 0; x <= img.width; x += sampleX ) { //code from video to set up pixel data
+
+    for (let y = 0; y <= img.height; y += sampleY ){
+    
+    var index = (x + y * img.width) * 4;
+    
+    var r = img.pixels[index + 0];
+    var g = img.pixels[index + 1];
+    var b = img.pixels[index + 2];
+    
+    fill(r,g,b); //fill with color data 
+    
 circle(x + sampleX / 2, y + sampleY / 2, sampleX);
 
-}
-
-}
-
-}
+    }}
+  }
